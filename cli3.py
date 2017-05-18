@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import urllib2
 import sys
     
-BOT_TOKEN = 'bot123456789:abcdefgh-ijklmnopqrstuvwxyzABCDEFGY'
+BOT_TOKEN = 'bot321656975:AAF05seQ-zDcbjVDlxINMv8CBtvj3kOU73Y'
 CHAT_ID = '@clienjirum'
 
 def send_url ( url ) :
@@ -48,6 +48,7 @@ def pasing_url( link ):
 
 		url = el.find('a')['href']
 		url = url.strip()
+		url = url.split('?')[0]
 		bbs_no = url.split('/')[4]
 
 		# 게시판 번호를 저장해서, 높은번호이면 알람
@@ -55,7 +56,6 @@ def pasing_url( link ):
 			send_url (url)
 			save_no ( bbs_no )
 			old_no = bbs_no
-			
 			
 		#print title
 		#print url		
